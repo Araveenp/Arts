@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Craves_Arts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg,#1e3a8a,#1f9adc, #347aaf, #0d9488,green);
+            color: #4f4f4f;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .intro-section {
+            background: linear-gradient(180deg,#1e3a8a, #0d9488);
+            padding: 20px;
+            width: 100%;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            transition: height 0.3s ease;
+            overflow: hidden;
+            animation: slidedown 1.5s;
+        }
+
+        .header-content {
+            opacity: 1;
+            transition: opacity 0.5s ease, transform 0.5s ease; 
+        }
+
+        .header-content.hidden {
+            opacity: 0;
+            transform: translateY(-20px); 
+        }
+
+        
+        .intro-section h1 {
+            text-shadow: 0px 0px 3px rgb(255, 0, 0);
+            font-size: 2.5em;
+            color: #4deee1;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .intro-section h2 {
+            font-size: 2em;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #333333;
+        }
+        .intro-section h2:hover{
+            transform: scale(1.2);
+            transition: all ease 1.4s;
+        }
+
+        .intro-section p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #242323;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin: 20px;
+            animation: pop ease 1.5s;
+        }
+
+        .buttons button {
+            background-color: #ed7b4b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover{
+            background-color: #db4b0d;
+            box-shadow: 0px 0px 15px 3px #4deee1;
+            transition: all ease 0.5s;
+            transform: scale(1.1);
+            
+        }
+
+        .palette-icon {
+            font-size: 4em;
+            margin-top: 20px;
+        }
+        .gallery{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+       #im1{
+       border-top-right-radius: 50%;
+       border-top-left-radius: 50%;
+        margin-top: 50px;
+        transform: rotate(30deg);
+       }
+       #im1:hover{
+        border-radius: 40px;
+        border: 5px;
+        border-style: double;
+        border-color: #4deee1;
+        margin-top: 50px;
+        transform: rotate(0deg);
+       }
+       #im2{
+        border-top-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        margin-top: 50px;
+        transform: rotate(-45deg);
+       }
+       #im2:hover{
+        border-radius: 40px;
+        border: 5px;
+        border-style: double;
+        border-color: #4deee1;
+        margin-top: 50px;
+        transform: rotate(0deg);
+       }
+       #im3{
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        margin-top: 50px;
+        transform: rotate(20deg);
+       }
+       #im3:hover{
+        border-radius: 40px;
+        border: 5px;
+        border-style: double;
+        border-color: #4deee1;
+        margin-top: 50px;
+        transform: rotate(0deg);
+       }
+       #im4{
+        border-radius: 100cqmax;
+        margin-top: 50px;
+        transform: rotate(80deg);
+       }
+       #im4:hover{
+        border: 5px;
+        border-style: double;
+        border-color: #4deee1;
+        margin-top: 50px;
+        transform: rotate(0deg);
+       }
+       #im5{
+        margin-top: 50px;
+        transform: rotate(-15deg);
+       }
+       #im5:hover{
+        border: 5px;
+        border-style: double;
+        border-color: #4deee1;
+        margin-top: 50px;
+        transform: rotate(0deg);
+       }
+       #im6{
+        border-radius: 50cm;
+        margin-top: 50px;
+        transform: rotate(49deg);
+       }
+       #im6:hover{
+        border-radius: 40px;
+        border: 5px;
+        border-style: double;
+        border-color: #4deee1;
+        margin-top: 50px;
+        transform: rotate(0deg);
+       }
+       img{
+        border-radius: 10cap;
+        margin-bottom: 50px;
+        border-radius: 50px;
+       }
+       img:hover{
+    box-shadow: 0px 0px 25px 10px rgb(118, 0, 236);
+        transform: scale(1.05);
+        transition: all ease 1.3s;
+       }
+       h2{
+        margin-bottom: 10px;
+        margin-top: 20px;
+        color: rgb(195, 213, 254);
+       }
+        .gallery-section,
+        .about-section,
+        .objectives-section {
+            max-width: 600px;
+            margin: 0px auto;
+            padding: 20px;
+        }
+        .about-section{
+            margin-top: 5px;
+            color: rgb(214, 197, 197);
+        }
+        .about-section:hover{
+            transform: scale(1.15);
+            transition: all ease 1s;
+            background-color: transparent;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .gallery-section{
+            margin-top: 20px;
+            margin: none;
+            border-radius: 50px;
+            background: linear-gradient(180deg,red,deeppink,blue,lightblue,green,yellow);
+        }
+        .objectives-section:hover{
+            transform: scale(1.15);
+            transition: all ease 1s;
+            background-color: transparent;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+        .contacts:hover{
+            transform: scale(1.15);
+            transition: all ease 1s;
+            background-color: transparent;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+        @keyframes pop{
+            0%{
+                opacity: 0;
+                transform: scale(0);
+            }
+            100%{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes slidedown{
+            0%{
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        ul{
+            list-style: none;
+            color: rgb(214, 197, 197);
+        }
+        .contacts{
+            color: rgb(214, 197, 197);
+        }
+    </style>
+</head>
+<body>
+    <section class="intro-section" id="header">
+        <div class="header-content" id="header-content">
+            <h1 class="slidedown">Introducing</h1>
+            <h2 class="slidedown">Craves_Arts</h2>
+            <p>"Your support means the world to me as I continue to pursue my passion and share my art with the world."</p>
+            <div class="buttons">
+                <button onclick="scrollToSection('contacts')" class="pop">Contact</button>
+                <button onclick="scrollToSection('gallery')" class="pop">Gallery</button>
+            </div>
+            <div class="palette-icon">🎨</div>
+        </div>
+    </section>
+    <h2>Craves_Arts Welcomes You..</h2><br>
+    <section class="gallery-section" id="gallery">
+        <div class="gallery">
+            <img src="p1.jpg" alt="Artwork 1" id="im1" ><br>
+            <img src="p2.jpg" alt="Artwork 2" id="im2"><br>
+            <img src="p3.jpg" alt="Artwork 3" id="im3"><br>
+            <img src="p4.jpg" alt="Artwork 4" id="im4"><br>
+            <img src="p5.jpg" alt="Artwork 5" id="im5"><br>
+            <img src="p6.jpg" alt="Artwork 5" id="im6"><br>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2>About Craves_Arts</h2>
+        <p>"Welcome to the vibrant world of art, where creativity knows no bounds. As an artist deeply passionate about the expressive mediums of drawing and painting, I immerse myself in the endless possibilities of each stroke and hue. Inspired by the intricacies of life and the beauty of the human experience, every piece tells a story, and each canvas becomes a window to the soul."</p>
+    </section>
+
+    <section class="objectives-section">
+        <h2>Objectives:</h2>
+        <ul>
+            <li>Highlighting the aesthetic allure of Art.</li>
+            <li>Present beautiful creations and inspire appreciation for art.</li>
+            <li>Honoring great personalities through Art.</li>
+        </ul> 
+    </section>
+    <section class="contacts" id="contacts">
+        <h2>Contacts</h2>
+        <label id="phoneNo">Phone No: 1234567890</label><br>
+        <label id="mail">E-mail: example@gmail.com</label><br>
+        <label id="twitter">Twitter: Craves_Arts01</label>
+    </section>
+
+    <script>
+        let lastScroll = 0;
+        const headerContent = document.getElementById('header-content');
+
+        window.addEventListener('scroll', () => {
+            let currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll) {
+                
+                headerContent.classList.add('hidden');
+            } else {
+               
+                headerContent.classList.remove('hidden');
+            }
+
+            lastScroll = currentScroll;
+        });
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
